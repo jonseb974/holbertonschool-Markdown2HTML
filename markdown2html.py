@@ -9,6 +9,9 @@ import os  # import os module
 
 
 def convert_markdown_to_html(self, markdown_file, html_file):
+    """
+    Convert markdown to html
+    """
     self.markdown_file = markdown_file
     self.html_file = html_file
     pass
