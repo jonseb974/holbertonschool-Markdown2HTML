@@ -6,11 +6,12 @@ import sys
 import os
 import markdown
 
+if __name__ == "__main__":
 
-if len(sys.argv) < 3:
-    print("Usage: {} <markdown_file> <output_file>".format(sys.argv[0]),
-    file=sys.stderr)
-    sys.exit(1)
+    if len(sys.argv) < 3:  # <markdown_file> <output_file>
+        print("Usage: {} README.md README.html".format(sys.argv[0]),
+            file=sys.stderr)
+        sys.exit(1)
 
 markdown_file = sys.argv[1]
 output_file = sys.argv[2]
