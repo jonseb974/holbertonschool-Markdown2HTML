@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-import markdown
+"""
+task_0
+"""
 import sys
 import os
+import markdown
+
 
 if len(sys.argv) < 3:
-    print("Usage: {} <markdown_file> <output_file>".format(sys.argv[0]), file=sys.stderr)
+    print("Usage: {} <markdown_file> <output_file>".format(sys.argv[0]),
+    file=sys.stderr)
     sys.exit(1)
 
 markdown_file = sys.argv[1]
@@ -23,4 +28,3 @@ with open(output_file, 'w') as out_file:
     out_file.write(html_text)
 
 sys.exit(0)
-
