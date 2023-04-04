@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
+""" task_0 Write a script markdown2html.py that takes an argument 2 strings:
+    First argument is the name of the Markdown file
+    Second argument is the output file name
 """
-task_0
-"""
+
 import sys
 import os
 import markdown
 
+
 if __name__ == "__main__":
 
-    if len(sys.argv) < 3:  # README.md README.html
+    if len(sys.argv) < 3:  #  <markdown_file> <output_file>
         print("Usage: {} <markdown_file> <output_file>".format(sys.argv[0]),
             file=sys.stderr)
         sys.exit(1)
