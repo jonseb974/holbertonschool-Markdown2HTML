@@ -11,9 +11,9 @@ import markdown
 
 if __name__ == "__main__":
 
-    if len(sys.argv) < 3:  #  <markdown_file> <output_file>
+    if len(sys.argv) < 3:
         print("Usage: {} <markdown_file> <output_file>".format(sys.argv[0]),
-            file=sys.stderr)
+    file=sys.stderr)
         sys.exit(1)
 
 markdown_file = sys.argv[1]
