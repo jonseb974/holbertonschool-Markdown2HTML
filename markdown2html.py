@@ -8,8 +8,8 @@ import markdown
 
 if __name__ == "__main__":
 
-    if len(sys.argv) < 3:  # <markdown_file> <output_file>
-        print("Usage: {} README.md README.html".format(sys.argv[0]),
+    if len(sys.argv) < 3:  # README.md README.html
+        print("Usage: {} <markdown_file> <output_file>".format(sys.argv[0]),
             file=sys.stderr)
         sys.exit(1)
 
