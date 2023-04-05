@@ -1,17 +1,21 @@
 #!/usr/bin/python3
 """ task_0 Write a script markdown2html.py that takes an argument 2 strings:
-    First argument is the name of the Markdown file
-    Second argument is the output file name
-    README.md README.html
+    First argument is the name of the Markdown file Second argument is
+    the output file name :README.md README.html
+    Improve markdown2html, parsing Headings Markdown syntax for generating HTML
 """
 
 import sys  # import the sys module
 import os  # import os module
+import markdown
 
 
 def convert_markdown_to_html(input_file, output_file):
-    # TODO: Implement Markdown to HTML conversion here
-    pass
+    with open(input_file, "r") as f:
+        md_text = f.read()
+    html_text = markdown.markdown(md_text)
+    with open(output_file, "w") as f:
+        f.write(html_text)
 
 
 if __name__ == "__main__":
