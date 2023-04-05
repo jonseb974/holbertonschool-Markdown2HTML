@@ -7,15 +7,27 @@
 
 import sys  # import the sys module
 import os  # import os module
-import markdown
 
 
 def convert_markdown_to_html(input_file, output_file):
+    # open read input file, read all lines
     with open(input_file, "r") as f:
-        md_text = f.read()
-    html_text = markdown.markdown(md_text)
+        lines = f.readlines()
+
+    # open write output file
     with open(output_file, "w") as f:
-        f.write(html_text)
+        # Foe each line of the file
+        for line in lines:
+            if line.startswith("# "):  # check if line starts with 1 # or more
+                heading_level = 1  # item of level 1
+                while line.startswith("#", heading_level):
+                    heading_level += 1
+                heading_text = line[heading_level:].strip()
+                f.write(
+                    f'<h{heading_level}>{heading_text}</h{heading_level}>\n'
+                    )
+            else:  # If line do not start with #, write it in output
+                f.write(line)
 
 
 if __name__ == "__main__":
