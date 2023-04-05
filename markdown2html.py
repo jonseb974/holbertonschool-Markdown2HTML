@@ -26,6 +26,16 @@ def convert_markdown_to_html(input_file, output_file):
                 f.write(
                     f'<h{heading_level}>{heading_text}</h{heading_level}>\n'
                     )
+            elif line.startswith("-"):  # check if line starts with '-'
+                f.write("<ul>\n")  # starts a new unordered list
+                while line.startswith("-"):
+                    line = line[1:].strip()  # remove "-" an white spaces
+                    f.write(f"<li>{line}</li>\n")  # add line as list
+                    try:
+                        line = lines.pop(0)  # get the next line
+                    except IndexError:
+                        break  # end of file
+                f.write("</ul>\n")  # end of the unordered list
             else:  # If line do not start with #, write it in output
                 f.write(line)
 
