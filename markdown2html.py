@@ -18,7 +18,7 @@ def convert_markdown_to_html(input_file, output_file):
     with open(output_file, "w") as f:
         # Foe each line of the file
         for line in lines:
-            if line.startswith("# "):  # check if line starts with 1 # or more
+            if line.startswith("#"):  # check if line starts with 1 # or more
                 heading_level = 1  # item of level 1
                 while line.startswith("#", heading_level):
                     heading_level += 1
