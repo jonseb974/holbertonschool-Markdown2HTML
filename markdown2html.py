@@ -20,7 +20,14 @@ def convert_markdown_to_html(input_file, output_file):
                 heading_text = line[heading_level:].strip()
                 f.write(
                     f'<h{heading_level}>{heading_text}</h{heading_level}>\n'
-                       )
+                )
+            elif line.startswith('* '):
+                f.write('<ul>\n')
+                f.write(f'<li>{line[2:].strip()}</li>\n')
+            elif line.startswith('*'):
+                f.write(f'<li>{line[1:].strip()}</li>\n')
+            elif line.startswith('\n'):
+                f.write('</ul>\n')
             else:
                 f.write(line)
 
@@ -29,7 +36,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         print(
             "Usage: ./markdown2html.py README.md README.html", file=sys.stderr
-             )
+        )
         sys.exit(1)
 
     input_file = sys.argv[1]
