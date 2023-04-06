@@ -3,6 +3,8 @@
     First argument is the name of the Markdown file
     Second argument is the output file name
 '''
+import os
+import sys
 
 
 def convert_markdown_to_html(input_file, output_file):
